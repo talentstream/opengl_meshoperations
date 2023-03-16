@@ -24,18 +24,30 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\glad.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="project_main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="shader_class.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\glad.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_class.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="camera_class.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="model_class.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh_class.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\tiny_obj_loader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
