@@ -21,7 +21,6 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 // 设置窗口宽高
 const unsigned int SCREEN_WIDTH = 800;
 const unsigned int SCREEN_HEIGHT = 600;
-bool blinn = true;
 
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 float lastX = SCREEN_WIDTH / 2.0f;
@@ -32,11 +31,13 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-glm::vec3 lightPos(100.0f, 50.0f, -50.0f);
-glm::vec3 lightColor(1.0f, 0.98f, 0.94f);
+// 设置光
+glm::vec3 lightPos(1000.0f ,500.0f ,-50.0f);
+glm::vec3 lightColor(0.7f, 0.98f, 0.94f);
 
 int main()
 {
+	// glfw 初始化
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -78,6 +79,9 @@ int main()
 	// 加载模型
 	Model ourModel("cat.obj");
 
+	// 线框模式
+	// glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
 	// 渲染循环
 	while (!glfwWindowShouldClose(window))
 	{
@@ -88,24 +92,31 @@ int main()
 		processInput(window);
 
 		// 渲染
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClearColor(0.3f, 0.3f, 0.3f, 0.3f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
+		// 启动渲染器
 		ourShader.Use();
 
+		// 矩阵变换
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCREEN_WIDTH / (float)SCREEN_HEIGHT, 0.1f, 100.0f);
 		glm::mat4 view = camera.GetViewMatrix();
 		ourShader.SetMat4("projection", projection);
 		ourShader.SetMat4("view", view);
-
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
 		model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));	// it's a bit too big for our scene, so scale it down
 		ourShader.SetMat4("model", model);
+
+		// 设置blinnphong模型参数
 		ourShader.SetVec3("viewPos", camera.Position);
 		ourShader.SetVec3("lightPos", lightPos);
-		ourShader.SetInt("blinn", blinn);
+		ourShader.SetVec3("lightColor", lightColor);
+		ourShader.SetVec3("ambient", ourModel.Ka);
+		ourShader.SetVec3("diffuse", ourModel.Kd);
+		ourShader.SetVec3("specular", ourModel.Ks);
 
+		// 绘制模型
 		ourModel.Draw(ourShader);
 
 		// 交换颜色缓冲
