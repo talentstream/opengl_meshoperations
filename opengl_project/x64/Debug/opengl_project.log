@@ -1,7 +1,4 @@
-﻿  project_main.cpp
-C:\Users\talentstream\source\repos\opengl_meshoperations\opengl_project\model_class.h(87,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
-          with
-          [
-              _Ty=unsigned int
-          ]
+﻿  mesh_class.cpp
+  project_main.cpp
+  正在生成代码...
   opengl_project.vcxproj -> C:\Users\talentstream\source\repos\opengl_meshoperations\x64\Debug\opengl_project.exe

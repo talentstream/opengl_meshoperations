@@ -10,7 +10,7 @@
 #include<iostream>
 #include"shader_class.h"
 #include"camera_class.h"
-#include"model_class.h"
+#include"mesh_class.h"
 
 // 回调函数，当窗口被拖放的时候进行调用
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -77,10 +77,10 @@ int main()
 	Shader ourShader("vertex_shader.vs", "fragment_shader.fs");
 
 	// 加载模型
-	Model ourModel("cat.obj");
+	Mesh ourMesh("cat.obj");
 
 	// 线框模式
-	// glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	// 渲染循环
 	while (!glfwWindowShouldClose(window))
@@ -112,12 +112,12 @@ int main()
 		ourShader.SetVec3("viewPos", camera.Position);
 		ourShader.SetVec3("lightPos", lightPos);
 		ourShader.SetVec3("lightColor", lightColor);
-		ourShader.SetVec3("ambient", ourModel.Ka);
-		ourShader.SetVec3("diffuse", ourModel.Kd);
-		ourShader.SetVec3("specular", ourModel.Ks);
+		ourShader.SetVec3("ambient", ourMesh.Ka);
+		ourShader.SetVec3("diffuse", ourMesh.Kd);
+		ourShader.SetVec3("specular", ourMesh.Ks);
 
 		// 绘制模型
-		ourModel.Draw(ourShader);
+		ourMesh.Draw(ourShader);
 
 		// 交换颜色缓冲
 		glfwSwapBuffers(window);

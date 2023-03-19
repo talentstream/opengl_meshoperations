@@ -33,15 +33,15 @@
     <ClCompile Include="..\..\..\..\Desktop\glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="mesh_class.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shader_class.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="camera_class.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="model_class.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="mesh_class.h">
