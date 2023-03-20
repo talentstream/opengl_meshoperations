@@ -78,7 +78,7 @@ int main()
 
 	// 加载模型
 	Mesh ourMesh("cat.obj");
-
+	//ourMesh.LoopSubdivide();
 	// 线框模式
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 

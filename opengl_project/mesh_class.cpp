@@ -27,7 +27,7 @@ Mesh::Mesh(const char* path)
 
 	std::cout << "# of vertices : " << attrib.vertices.size() / 3 << std::endl;
 	std::cout << "# of normals : " << attrib.normals.size() / 3 << std::endl;
-	std::cout << "# of shapes : " << shapes.size() << std::endl;
+	std::cout << "# of shapes : " << shapes.size() << std::endl;	
 	std::cout << "# of materials : " << materials.size() << std::endl;
 
 	// 去重map
@@ -36,6 +36,8 @@ Mesh::Mesh(const char* path)
 	// 读取 shapes 的 mesh 顶点属性
 	for (const auto& shape : shapes)
 	{
+		std::vector<Vertex> triangle_vertices;
+		int i = 0;
 		for (const auto& index : shape.mesh.indices)
 		{
 			Vertex vertex{};
@@ -57,6 +59,14 @@ Mesh::Mesh(const char* path)
 				vertices.push_back(vertex);
 			}
 
+			triangle_vertices.push_back(vertex);
+			i++;
+			if (i == 3)
+			{
+				i = 0;
+				AddFace({ triangle_vertices[0], triangle_vertices[1],triangle_vertices[2] });
+				triangle_vertices.clear();
+			}
 			indices.push_back(uniqueVertices[vertex]);
 		}
 	}
@@ -73,7 +83,12 @@ Mesh::Mesh(const char* path)
 		Kd = glm::vec3(material.diffuse[0], material.diffuse[1], material.diffuse[2]);
 		Ks = glm::vec3(material.specular[0], material.specular[1], material.specular[2]);
 	}
-
+	std::cout << "before vertices faces :" << faces.size() << std::endl;
+	std::cout <<"before vertices num :" << vertices.size() << std::endl;
+	std::cout <<"before indices num :" << indices.size() << std::endl;
+	// LoopSubdivide();
+	std::cout << "after vertices num : " << vertices.size() << std::endl;
+	std::cout << "after indices num : " << indices.size() << std::endl;
 	SetupMesh();
 }
 

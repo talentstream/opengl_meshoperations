@@ -1,4 +1,4 @@
 ﻿  mesh_class.cpp
-  project_main.cpp
-  正在生成代码...
+C:\Users\talentstream\source\repos\opengl_meshoperations\opengl_project\mesh_class.h(130,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\talentstream\source\repos\opengl_meshoperations\opengl_project\mesh_class.h(211,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   opengl_project.vcxproj -> C:\Users\talentstream\source\repos\opengl_meshoperations\x64\Debug\opengl_project.exe
