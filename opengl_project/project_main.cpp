@@ -77,8 +77,8 @@ int main()
 	Shader ourShader("vertex_shader.vs", "fragment_shader.fs");
 
 	// 加载模型
-	Mesh ourMesh("cat.obj");
-	//ourMesh.LoopSubdivide();
+	Mesh ourMesh("dog.obj");
+	// ourMesh.LoopSubdivide();
 	// 线框模式
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 

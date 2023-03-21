@@ -31,15 +31,15 @@ Mesh::Mesh(const char* path)
 	std::cout << "# of materials : " << materials.size() << std::endl;
 
 	// 去重map
-	std::unordered_map<Vertex, uint32_t> uniqueVertices;
+	std::unordered_map<Vertex, int> uniqueVertices;
 
 	// 读取 shapes 的 mesh 顶点属性
 	for (const auto& shape : shapes)
 	{
-		std::vector<Vertex> triangle_vertices;
-		int i = 0;
+		std::cout << shape.mesh.indices.size() << std::endl;
 		for (const auto& index : shape.mesh.indices)
 		{
+			// std::cout << index.vertex_index << " " << index.normal_index << std::endl;
 			Vertex vertex{};
 			vertex.position = {
 				attrib.vertices[3 * index.vertex_index + 0],
@@ -55,17 +55,8 @@ Mesh::Mesh(const char* path)
 			// 顶点去重
 			if (uniqueVertices.count(vertex) == 0)
 			{
-				uniqueVertices[vertex] = static_cast<uint32_t>(vertices.size());
+				uniqueVertices[vertex] = vertices.size();
 				vertices.push_back(vertex);
-			}
-
-			triangle_vertices.push_back(vertex);
-			i++;
-			if (i == 3)
-			{
-				i = 0;
-				AddFace({ triangle_vertices[0], triangle_vertices[1],triangle_vertices[2] });
-				triangle_vertices.clear();
 			}
 			indices.push_back(uniqueVertices[vertex]);
 		}
@@ -83,10 +74,14 @@ Mesh::Mesh(const char* path)
 		Kd = glm::vec3(material.diffuse[0], material.diffuse[1], material.diffuse[2]);
 		Ks = glm::vec3(material.specular[0], material.specular[1], material.specular[2]);
 	}
-	std::cout << "before vertices faces :" << faces.size() << std::endl;
+
 	std::cout <<"before vertices num :" << vertices.size() << std::endl;
-	std::cout <<"before indices num :" << indices.size() << std::endl;
-	// LoopSubdivide();
+	std::cout <<"before indices num :" << indices.size() / 3 << std::endl;
+	/*for (size_t i = 0; i < indices.size() / 3; i++)
+	{
+		std::cout << " # " << i << "  : " << indices[i] << " " << indices[i + 1] << " " << indices[i + 2] << std::endl;
+	}*/
+	LoopSubdivide();
 	std::cout << "after vertices num : " << vertices.size() << std::endl;
 	std::cout << "after indices num : " << indices.size() << std::endl;
 	SetupMesh();

@@ -1,4 +1,68 @@
-﻿  mesh_class.cpp
-C:\Users\talentstream\source\repos\opengl_meshoperations\opengl_project\mesh_class.h(130,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-C:\Users\talentstream\source\repos\opengl_meshoperations\opengl_project\mesh_class.h(211,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  opengl_project.vcxproj -> C:\Users\talentstream\source\repos\opengl_meshoperations\x64\Debug\opengl_project.exe
+﻿  project_main.cpp
+C:\Users\talentstream\source\repos\opengl_meshoperations\opengl_project\mesh_class.h(104,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\utility(172): warning C4267: “初始化”: 从“size_t”转换到“_Ty2”，可能丢失数据
+          with
+          [
+              _Ty2=int
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xmemory(673): message : 查看对正在编译的函数 模板 实例化“std::pair<const Vertex,int>::pair<Vertex&,_Ty,0>(_Other1,_Other2 &&) noexcept”的引用
+          with
+          [
+              _Ty=unsigned __int64,
+              _Other1=Vertex &,
+              _Other2=unsigned __int64
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xmemory(680,47): message : 查看对正在编译的函数 模板 实例化“std::pair<const Vertex,int>::pair<Vertex&,_Ty,0>(_Other1,_Other2 &&) noexcept”的引用
+          with
+          [
+              _Ty=unsigned __int64,
+              _Other1=Vertex &,
+              _Other2=unsigned __int64
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\list(584): message : 查看对正在编译的函数 模板 实例化“void std::_Default_allocator_traits<_Alloc>::construct<_Ty,Vertex&,unsigned __int64>(_Alloc &,_Objty *const ,Vertex &,unsigned __int64 &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::_List_node<std::pair<const Vertex,int>,std::_Default_allocator_traits<std::allocator<std::pair<const Vertex,int>>>::void_pointer>>,
+              _Ty=std::pair<const Vertex,int>,
+              _Objty=std::pair<const Vertex,int>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\list(586,34): message : 查看对正在编译的函数 模板 实例化“void std::_Default_allocator_traits<_Alloc>::construct<_Ty,Vertex&,unsigned __int64>(_Alloc &,_Objty *const ,Vertex &,unsigned __int64 &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::_List_node<std::pair<const Vertex,int>,std::_Default_allocator_traits<std::allocator<std::pair<const Vertex,int>>>::void_pointer>>,
+              _Ty=std::pair<const Vertex,int>,
+              _Objty=std::pair<const Vertex,int>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xhash(588): message : 查看对正在编译的函数 模板 实例化“std::_List_node_emplace_op2<std::allocator<std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_List_node_emplace_op2<Vertex&,unsigned __int64>(_Alnode &,Vertex &,unsigned __int64 &&)”的引用
+          with
+          [
+              _Ty=std::pair<const Vertex,int>,
+              _Alloc=std::allocator<std::pair<const Vertex,int>>,
+              _Alnode=std::allocator<std::_List_node<std::pair<const Vertex,int>,std::_Default_allocator_traits<std::allocator<std::pair<const Vertex,int>>>::void_pointer>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xhash(612,53): message : 查看对正在编译的函数 模板 实例化“std::_List_node_emplace_op2<std::allocator<std::_List_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_List_node_emplace_op2<Vertex&,unsigned __int64>(_Alnode &,Vertex &,unsigned __int64 &&)”的引用
+          with
+          [
+              _Ty=std::pair<const Vertex,int>,
+              _Alloc=std::allocator<std::pair<const Vertex,int>>,
+              _Alnode=std::allocator<std::_List_node<std::pair<const Vertex,int>,std::_Default_allocator_traits<std::allocator<std::pair<const Vertex,int>>>::void_pointer>>
+          ]
+C:\Users\talentstream\source\repos\opengl_meshoperations\opengl_project\mesh_class.h(158,1): message : 查看对正在编译的函数 模板 实例化“std::pair<std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>>,bool> std::_Hash<std::_Umap_traits<_Kty,int,std::_Uhash_compare<_Kty,_Hasher,_Keyeq>,_Alloc,false>>::emplace<Vertex&,unsigned __int64>(Vertex &,unsigned __int64 &&)”的引用
+          with
+          [
+              _Ty=std::pair<const Vertex,int>,
+              _Kty=Vertex,
+              _Hasher=std::hash<Vertex>,
+              _Keyeq=std::equal_to<Vertex>,
+              _Alloc=std::allocator<std::pair<const Vertex,int>>
+          ]
+C:\Users\talentstream\source\repos\opengl_meshoperations\opengl_project\mesh_class.h(158,26): message : 查看对正在编译的函数 模板 实例化“std::pair<std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>>,bool> std::_Hash<std::_Umap_traits<_Kty,int,std::_Uhash_compare<_Kty,_Hasher,_Keyeq>,_Alloc,false>>::emplace<Vertex&,unsigned __int64>(Vertex &,unsigned __int64 &&)”的引用
+          with
+          [
+              _Ty=std::pair<const Vertex,int>,
+              _Kty=Vertex,
+              _Hasher=std::hash<Vertex>,
+              _Keyeq=std::equal_to<Vertex>,
+              _Alloc=std::allocator<std::pair<const Vertex,int>>
+          ]
+  opengl_project.vcxproj -> C:\Users\talentstream\Source\Repos\opengl_meshoperations\x64\Debug\opengl_project.exe
