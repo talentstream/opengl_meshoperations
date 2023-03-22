@@ -133,15 +133,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Desktop\glad.c" />
-    <ClCompile Include="mesh_class.cpp" />
-    <ClCompile Include="project_main.cpp" />
-    <ClCompile Include="shader_class.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\tiny_obj_loader.h" />
-    <ClInclude Include="camera_class.h" />
-    <ClInclude Include="mesh_class.h" />
-    <ClInclude Include="shader_class.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="objload.h" />
+    <ClInclude Include="shader.h" />
+    <ClInclude Include="shape.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

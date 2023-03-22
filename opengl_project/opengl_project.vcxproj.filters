@@ -16,38 +16,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="vertex_shader.vs">
-      <Filter>源文件</Filter>
-    </None>
-    <None Include="fragment_shader.fs">
-      <Filter>源文件</Filter>
-    </None>
+    <None Include="fragment_shader.fs" />
+    <None Include="vertex_shader.vs" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="project_main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="shader_class.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\Desktop\glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="mesh_class.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="shader_class.h">
+    <ClInclude Include="camera.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="camera_class.h">
+    <ClInclude Include="objload.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="mesh_class.h">
+    <ClInclude Include="shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\tiny_obj_loader.h">
+    <ClInclude Include="shape.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
